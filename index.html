@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+<header class="header">
+
+
+  <nav>
+    <div class="nav-bg"></div>
+    <ul>
+      <li><a href="#"><img src="./jpeg/youtubetv.svg" alt=""></a></li>
+      <li><a href="#"><img src="./jpeg/instagram.svg" alt=""></a></li>
+      <li><a href="#">Support</a></li>
+    </ul>
+  </nav>
+  <div class="hero">
+    <h1>Score Calculator</h1>
+  </div>
+
+</header>
+
+<div class="registration-form">
+  Welkome, we're glad to see you
+
+
+<h2>Best Calculator Score in the World</h2>
+<div class="container" id="container">
+<div class="form-container sign-up-container">
+  <form action="#">
+    <h1>Create Account</h1>
+    <div class="social-container">
+      <a href="" class="social"><img src="./jpeg/facebook.svg" alt="facebook"></a>
+      <a href="" class="social"><img src="./jpeg/google.svg" alt="google"></a>
+      <a href="" class="social"><img src="./jpeg/minutemailer.svg" alt="telegram"></a>
+    </div>
+    <span>or use your email for registration</span>
+    <input class ="registration-input" type="text" placeholder="Name" />
+    <input class ="registration-input" type="email" placeholder="Email" />
+    <input class ="registration-input" type="password" placeholder="Password" />
+    <button class="registration-btn">Sign Up</button>
+  </form>
+</div>
+<div class="form-container sign-in-container">
+  <form action="#">
+    <h1>Sign in</h1>
+    <div class="social-container">
+      <a href="" class="social"><img src="./jpeg/facebook.svg" alt="facebook"></a>
+      <a href="" class="social"><img src="./jpeg/google.svg" alt="google"></a>
+      <a href="" class="social"><img src="./jpeg/minutemailer.svg" alt="telegram"></a>
+    </div>
+    <span>or use your account</span>
+    <input class ="registration-input" type="email" placeholder="Email" />
+    <input class ="registration-input" type="password" placeholder="Password" />
+    <a href="#">Forgot your password?</a>
+    <button class="registration-btn">Sign In</button>
+  </form>
+</div>
+<div class="overlay-container">
+  <div class="overlay">
+    <div class="overlay-panel overlay-left">
+      <h1>Welcome Back!</h1>
+      <p>To keep connected with us please login <br/> with your personal info</p>
+      <button class="registration-btn" class="ghost" id="signIn">Sign In</button>
+    </div>
+    <div class="overlay-panel overlay-right">
+      <h1>Hello, Friend!</h1>
+      <p>Enter your personal details and <br/> start journey with us</p>
+      <button class="registration-btn" class="ghost" id="signUp">Sign Up</button>
+    </div>
+  </div>
+</div>
+</div>
+
+</div>
+
+<div class ="inputContainer" id ="container">
+  <div class="container-calculator">
+    <div class="stringInputs" >
+      
+          <input  class="goalHome goalGeneral" type="number">
+          <input  class="goalAway goalGeneral" type="number">
+          <button class ="deleInput" id="elem" onclick = deleteParentContainer(event)>x</button> 
+          <br>
+          <input type="range" value="24" min="1" max="100"class="change goalHome1" oninput="this.nextElementSibling.value = this.value">
+          <output class="goalHome-output">24</output>
+          <input type="range" value="24" min="1" max="100"class="change goalAway1" oninput="this.nextElementSibling.value = this.value">
+          <output class="goalAway-output">24</output>
+          
+      
+    </div>
+    <div class="stringInputs"  >
+      
+          <input  class="goalHome goalGeneral" type="number">
+          <input  class="goalAway goalGeneral" type="number">
+          <button class ="deleInput" id= "elem" onclick = deleteParentContainer(event)>x</button>
+          <br>
+          <input type="range" value="24" min="1" max="100"class="change goalHome1" oninput="this.nextElementSibling.value = this.value">
+          <output class="goalHome-output">24</output>
+          <input type="range" value="24" min="1" max="100"class="change goalAway1"  oninput="this.nextElementSibling.value = this.value">
+          <output class="goalAway-output">24</output>
+        
+          
+          
+          
+    </div>
+    <div class="stringInputs" >
+        
+        <input  class="goalHome goalGeneral" type="number"> 
+        <input  class="goalAway goalGeneral" type="number">
+        <button class ="deleInput" id="elem" type = "button" onclick = deleteParentContainer(event)>x</button>
+        <br>
+        <input type="range" value="24" min="1" max="100" class="change goalHome1" oninput="this.nextElementSibling.value = this.value">
+          <output class="goalHome-output">24</output>
+        <input type="range" value="24" min="1" max="100" class="change goalAway1" oninput="this.nextElementSibling.value = this.value">
+        <output class="goalAway-output">24</output>
+    </div> 
+  
+    </div>
+    <button class ="create">Add Input</button>
+  </div>
+
+  <div class="good result">
+    <div class="tabl">
+      <p><h1>Result Team</h1></p>
+      <span id="goalHome" class="gols-result1 resultGeneral"></span>
+      <h3>:</h3>
+      <span id="goalAway" class="gols-result2 resultGeneral"></span>
+    </div>
+        <div class="btn-bottom">
+          <button class ="b-1">Calculate</button>
+          <button class ="del">Delete</button> 
+      </div>  
+  </div>
+
+  <footer>
+    <div class="footer">
+      <ul class="footer-ul">
+        <li class ="footer-li"><a class ="footer-a"href="https://twitter.com">Twitter</a></li>
+        <li class ="footer-li"><a class ="footer-a"href="https://codepen.io">Codepen</a></li>
+        <li class ="footer-li"><a class ="footer-a"href="#">Email</a></li>
+        <li class ="footer-li"><a class ="footer-a"href="https://dribbble.com">Dribbble</a></li>
+        <li class ="footer-li"><a class ="footer-a"href="https://github.com">Github</a></li>
+        <li class ="footer-li"><p>👋</p></li>
+      </ul>
+    </div>
+  </footer>
+  <script src="./script.js"></script>
+</body>
+</html>

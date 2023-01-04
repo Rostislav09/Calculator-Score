@@ -83,26 +83,26 @@
   <div class="container-calculator">
     <div class="stringInputs" >
       
-          <input  class="goalHome goalGeneral" type="number">
-          <input  class="goalAway goalGeneral" type="number">
+          <input onchange = "calcResultScoreGeneral()" class="goalHome goalGeneral" type="number">
+          <input onchange = "calcResultScoreGeneral()" class="goalAway goalGeneral" type="number">
           <button class ="deleInput" id="elem" onclick = deleteParentContainer(event)>x</button> 
           <br>
-          <input type="range" value="24" min="1" max="100"class="change goalHome1" oninput="this.nextElementSibling.value = this.value">
+          <input onchange = "calcResultScoreGeneral()" type="range" value="24" min="1" max="100"class="change goalHome1" oninput="this.nextElementSibling.value = this.value">
           <output class="goalHome-output">24</output>
-          <input type="range" value="24" min="1" max="100"class="change goalAway1" oninput="this.nextElementSibling.value = this.value">
+          <input onchange = "calcResultScoreGeneral()" type="range" value="24" min="1" max="100"class="change goalAway1" oninput="this.nextElementSibling.value = this.value">
           <output class="goalAway-output">24</output>
           
       
     </div>
     <div class="stringInputs"  >
       
-          <input  class="goalHome goalGeneral" type="number">
-          <input  class="goalAway goalGeneral" type="number">
+          <input onchange = "calcResultScoreGeneral()" class="goalHome goalGeneral" type="number">
+          <input onchange = "calcResultScoreGeneral()" class="goalAway goalGeneral" type="number">
           <button class ="deleInput" id= "elem" onclick = deleteParentContainer(event)>x</button>
           <br>
-          <input type="range" value="24" min="1" max="100"class="change goalHome1" oninput="this.nextElementSibling.value = this.value">
+          <input onchange = "calcResultScoreGeneral()" type="range" value="24" min="1" max="100"class="change goalHome1" oninput="this.nextElementSibling.value = this.value">
           <output class="goalHome-output">24</output>
-          <input type="range" value="24" min="1" max="100"class="change goalAway1"  oninput="this.nextElementSibling.value = this.value">
+          <input onchange = "calcResultScoreGeneral()" type="range" value="24" min="1" max="100"class="change goalAway1"  oninput="this.nextElementSibling.value = this.value">
           <output class="goalAway-output">24</output>
         
           
@@ -111,13 +111,13 @@
     </div>
     <div class="stringInputs" >
         
-        <input  class="goalHome goalGeneral" type="number"> 
-        <input  class="goalAway goalGeneral" type="number">
+        <input onchange = "calcResultScoreGeneral()" class="goalHome goalGeneral" type="number"> 
+        <input  onchange = "calcResultScoreGeneral()" class="goalAway goalGeneral" type="number">
         <button class ="deleInput" id="elem" type = "button" onclick = deleteParentContainer(event)>x</button>
         <br>
-        <input type="range" value="24" min="1" max="100" class="change goalHome1" oninput="this.nextElementSibling.value = this.value">
-          <output class="goalHome-output">24</output>
-        <input type="range" value="24" min="1" max="100" class="change goalAway1" oninput="this.nextElementSibling.value = this.value">
+        <input onchange = "calcResultScoreGeneral()" type="range" value="24" min="1" max="100" class="change goalHome1" oninput="this.nextElementSibling.value = this.value">
+        <output class="goalHome-output">24</output>
+        <input onchange = "calcResultScoreGeneral()" type="range" value="24" min="1" max="100" class="change goalAway1" oninput="this.nextElementSibling.value = this.value">
         <output class="goalAway-output">24</output>
     </div> 
   
@@ -129,7 +129,6 @@
     <div class="tabl">
       <p><h1>Result Team</h1></p>
       <span id="goalHome" class="gols-result1 resultGeneral"></span>
-      <h3>:</h3>
       <span id="goalAway" class="gols-result2 resultGeneral"></span>
     </div>
         <div class="btn-bottom">

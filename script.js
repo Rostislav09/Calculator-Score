@@ -1,15 +1,15 @@
-/////////Header
-function reset(a, b) {
-  let inp = document.querySelectorAll(a);
-  //i = 0;
-  for (let i = 0; i < inp.length; i++) {
-    inp[i].value = "";
+///////// Function restart
+function reset(inputClassName, resultInnerClassName) {
+  let inputAll = document.querySelectorAll(inputClassName);
+  
+  for (let i = 0; i < inputAll.length; i++) {
+    inputAll[i].value = "";
   }
-  let res = document.querySelectorAll(b);
-  for (let k = 0; k < res.length; k++) {
-    console.log(res[k]);
-    res[k].innerHTML = "";
-    console.log(res[k]);
+  let resultAll = document.querySelectorAll(resultInnerClassName);
+  for (let k = 0; k < resultAll.length; k++) {
+    console.log(resultAll[k]);
+    resultAll[k].innerHTML = "";
+    console.log(resultAll[k]);
   }
 };
 
@@ -18,16 +18,38 @@ function createGoalsRow () {
   const createIn = document.createElement("div");
   document.querySelector(".container-calculator").appendChild(createIn);
 
-  const input = document.createElement("input");
-  input.className = "goalHome goalGeneral"
-  input.type = "number"
-  createIn.appendChild(input);
-
-  const input2 = document.createElement("input");
-  input2.className = "goalAway goalGeneral"
-  input2.type = "number"
-  createIn.appendChild(input2);
-
+  function inputsAdd (inputClassName) {
+    const input = document.createElement("input");
+    input.className = inputClassName;
+    input.type = "number"
+    input.onchange = () => calcResultScoreGeneral();
+    createIn.appendChild(input);
+  }
+  
+ function rangeAdd (rangeClassName) {
+    const range = document.createElement("input");
+    range.className = rangeClassName
+    range.type = "range"
+    range.min = 0
+    range.max = 100
+    range.step = 1
+    range.value = 24
+    range.oninput = function () { this.nextElementSibling.value = this.value; };
+    range.onchange = () => calcResultScoreGeneral();
+    createIn.appendChild(range);
+  };
+  
+ function outputAdd (outputClassName) {
+    const output = document.createElement("output")
+    output.value = 24
+    output.className = outputClassName
+    createIn.appendChild(output);
+  }
+  
+  
+  inputsAdd ("goalHome goalGeneral");
+  inputsAdd ("goalAway goalGeneral");
+  
   const buttonDel = document.createElement("button");
   buttonDel.className = "deleInput"
   buttonDel.innerHTML = "x"
@@ -37,37 +59,13 @@ function createGoalsRow () {
 
   const breake = document.createElement("br");
   createIn.appendChild(breake);
-
-  const range = document.createElement("input");
-  range.className = "change goalHome1"
-  range.type = "range"
-  range.min = 0
-  range.max = 100
-  range.step = 1
-  range.value = 24
-  range.oninput = function () { this.nextElementSibling.value = this.value; };
-  createIn.appendChild(range);
-
-  const output = document.createElement("output")
-  output.value = 24
-  output.className = "goalHome-output"
-  createIn.appendChild(output);
-
-  const range2 = document.createElement("input");
-  range2.className = "change goalAway1"
-  range2.type = "range"
-  range2.min = 0
-  range2.max = 100
-  range2.step = 1
-  range2.value = 80
-  range2.oninput = function () { this.nextElementSibling.value = this.value; };
-  createIn.appendChild(range2);
-
-  const output2 = document.createElement("output")
-  output2.value = 24
-  output2.className = "goalAway-output"
-  createIn.appendChild(output2);
-
+  
+  rangeAdd ("change goalHome1");
+  outputAdd ("goalHome-output");
+  
+  rangeAdd ("change goalAway1");
+  outputAdd ("goalAway-output");
+ 
 }
 
 ///////// delete Input
@@ -104,9 +102,13 @@ function calcResultScore(inputClassName, resultInnerClassName, rangeOutputClassN
   document.querySelector(resultInnerClassName).innerHTML = resultScore;
 };
 
-document.querySelector('.b-1').addEventListener('click', () => {
+function calcResultScoreGeneral() {
   calcResultScore('.goalHome', '.gols-result1', '.goalHome-output');
   calcResultScore('.goalAway', '.gols-result2', '.goalAway-output');
+}
+
+document.querySelector('.b-1').addEventListener('click', () => {
+  calcResultScoreGeneral();
 });
 
 document.querySelector('.create').addEventListener('click', () => {
@@ -131,3 +133,4 @@ signUpButton.addEventListener('click', () => {
 signInButton.addEventListener('click', () => {
   container.classList.remove("right-panel-active");
 });
+
